@@ -1,5 +1,5 @@
 {
-  "name": "@jbdap/nice-error",
+  "name": "jbdap-nice-error",
   "version": "0.1.0",
   "description": "A friendly new javascript Error class which can trace the whole error path and info.",
   "main": "index.js",

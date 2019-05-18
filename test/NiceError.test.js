@@ -22,7 +22,7 @@ test('测试多层嵌套 NiceError', () => {
     // console.log(ne2.message)
     // console.log(ne2.fullMessage())
     // console.log(ne2.stack)
-    console.log(ne2.fullStack())
+    // console.log(ne2.fullStack())
     expect(ne2.name).toEqual('AppError')
     expect(ne2.message).toEqual('A inner NiceError was caught!')
     expect(ne2.fullMessage()).toEqual('[AppError]: A inner NiceError was caught! <= [NiceError]: A normal error was caught! <= [Error]: This is a normal error')
@@ -42,10 +42,8 @@ test('测试最内层非 Error 原型链的多层嵌套 NiceError', () => {
         // console.log(ne1.message)
         // console.log(ne1.fullMessage())
         // console.log(ne1.stack)
-        console.log(ne1.fullStack())
+        // console.log(ne1.fullStack())
         expect(ne1.message).toEqual('An object was thrown')
         expect(ne1.fullMessage()).toEqual('[NiceError]: An object was thrown <= [Throw]: type = [object Object], content = {"foo":"bar"}')
     }
-    // expect(ne2.message).toEqual('A inner NiceError was caught!')
-    // expect(ne2.fullMessage()).toEqual('[AppError]: A inner NiceError was caught! <= [NiceError]: A normal error was caught! <= [Error]: This is a normal error')
 });
