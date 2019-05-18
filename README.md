@@ -46,7 +46,7 @@ let ne1 = new NiceError('A normal error was caught!',{
 })
 
 // another NiceError which takes ne1 as it's inner error
-let ne2 = new NiceError('A inner NiceError was caught!',{
+let ne2 = new NiceError('An inner NiceError was caught!',{
     name: 'AppError',
     cause: ne1,
     info: {
@@ -56,15 +56,15 @@ let ne2 = new NiceError('A inner NiceError was caught!',{
 
 console.log(ne2.message)
 ------------------------------
-A inner NiceError was caught!
+An inner NiceError was caught!
 
 console.log(ne2.fullMessage())
 ------------------------------
-[AppError]: A inner NiceError was caught! <= [NiceError]: A normal error was caught! <= [Error]: This is a normal error
+[AppError]: An inner NiceError was caught! <= [NiceError]: A normal error was caught! <= [Error]: This is a normal error
 
 console.log(ne2.fullStack())
 ----------------------------
-[AppError]: A inner NiceError was caught! <= [NiceError]: A normal error was caught! <= [Error]: This is a normal error
+[AppError]: An inner NiceError was caught! <= [NiceError]: A normal error was caught! <= [Error]: This is a normal error
         at Object.<anonymous>.test (/test/NiceError.test.js:18:15)
         at Object.asyncJestTest (/node_modules/jest-jasmine2/build/jasmineAsyncInstall.js:102:37)
         at resolve (/node_modules/jest-jasmine2/build/queueRunner.js:43:12)
