@@ -34,7 +34,7 @@ NiceError.prototype.fullMessage = function(){
         let result = undefined;
         // 如果是原生 Error 或者 NiceError
         if (ne instanceof NiceError || ne instanceof Error) result = '[' + ne.name + ']: ' + ne.message
-        // 如果是没有继承 Error 原型的第三方封装错误
+        // 如果是没有继承 Error 原型的第三方封装错误或者其它对象
         else {
             result = '[Throw]: type = ' + Object.prototype.toString.call(ne)
             let str = JSON.stringify(ne)
@@ -86,6 +86,7 @@ NiceError.prototype.fullInfo = function(){
                 result[key] = ne.info[key]
             }
         }
+        // 如果在一个 NE 链条的不同层实例设置了同名 info，内层的会覆盖外层的
         if (ne.cause) {
             let subInfo = _getFullInfo(ne.cause)
             let keys = Object.keys(subInfo)

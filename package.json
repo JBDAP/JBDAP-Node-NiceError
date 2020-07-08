@@ -1,6 +1,6 @@
 {
   "name": "jbdap-nice-error",
-  "version": "0.1.3",
+  "version": "0.1.5",
   "description": "A friendly new javascript Error class which can trace the whole error chain and info.",
   "main": "index.js",
   "scripts": {
